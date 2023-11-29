@@ -1,0 +1,9 @@
+AI/user_train
+**/__pycache__/
+*.swp
+*.mp3
+*.mp4
+*.wav
+*.pth
+*.npy
+*.pt
