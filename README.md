@@ -46,22 +46,28 @@
 ## 3️⃣ 서비스 화면
 
 <h4>모델 만들기</h4>
-![make model](./exec/asset/screen/make_model.gif){: width="250"}
+
+![make model](./exec/asset/screen/make_model.gif)
 
 <h4>커버송 만들기</h4>
-![make cover](./exec/asset/screen/make_cover.gif){: width="250"}
+
+![make cover](./exec/asset/screen/make_cover.gif)
 
 <h4>커버송 듣기</h4>
-![play](./exec/asset/screen/play.gif){: width="250"}
+
+![play](./exec/asset/screen/play.gif)
 
 <h4>커버송 검색</h4>
-![search](./exec/asset/screen/search.gif){: width="250"}
+
+![search](./exec/asset/screen/search.gif)
 
 <h4>커버송 요청</h4>
-![cover request](./exec/asset/screen/cover_request.gif){: width="250"}
+
+![cover request](./exec/asset/screen/cover_request.gif)
 
 <h4>푸쉬 알람</h4>
-![alarm](./exec/asset/screen/alarm.gif){: width="250"}
+
+![alarm](./exec/asset/screen/alarm.gif)
 
 <br>
 
