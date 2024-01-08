@@ -1,0 +1,14 @@
+[Unit]
+Description=uWSGI Emperor service
+
+[Service]
+ExecStart=uwsgi --emperor /srv/server/singchro/uwsgi
+User=root
+Restart=on-failure
+killSignal=SIGQUIT
+Type=notify
+NotifyAccess=all
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target

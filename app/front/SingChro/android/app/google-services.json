@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "453271247088",
+    "project_id": "a404-singchro",
+    "storage_bucket": "a404-singchro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:453271247088:android:a81c296a491378f6d74a35",
+        "android_client_info": {
+          "package_name": "com.singchro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBysT22l0FHmrO8C0rIvkQ5OGuPfLVMF7Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

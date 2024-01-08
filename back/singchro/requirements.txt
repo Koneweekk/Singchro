@@ -1,0 +1,14 @@
+django
+djangorestframework
+django-storages
+boto3
+uwsgi
+
+dj-rest-auth
+dj-rest-auth[with_social]
+
+Pillow
+
+mysqlclient
+
+firebase-admin

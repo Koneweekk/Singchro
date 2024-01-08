@@ -1,0 +1,57 @@
+version: "3.8"
+services:
+    db:
+        image: mariadb
+        container_name: mariadb
+        environment:
+            MYSQL_DATABASE: singchro
+            MYSQL_USER: root
+            MYSQL_USER_PASSWORD: a404authorized
+            MYSQL_ROOT_PASSWORD: a404authorized
+        volumes:
+            - /db/mysql:/var/lib/mysql/
+        ports:
+            - '3306:3306'
+        restart: unless-stopped
+
+    nginx:
+        image: moonheee/nginx
+        container_name: nginx
+        build: ./nginx
+        ports:
+            - '80:80'
+            - '443:443'
+        volumes:
+            - /home/ubuntu/moonheee/S09P22A404/back/singchro/uwsgi:/srv/server/singchro/uwsgi
+            - ./log:/var/log/nginx
+            - /etc/nginx/conf.d:/etc/nginx/conf.d
+            - ./data/certbot/conf:/etc/letsencrypt
+            - ./data/certbot/www:/var/www/certbot
+            - /static:/srv/server/static
+        restart: unless-stopped
+        depends_on:
+            - certbot
+
+    django:
+        image: moonheee/django
+        container_name: django
+        build: ./singchro
+        ports:
+            - '8000:8000'
+        volumes:
+            - /home/ubuntu/moonheee/S09P22A404/back/singchro/uwsgi:/srv/server/singchro/uwsgi
+            - ./log/nginx:/log
+            - /static:/srv/server/static
+        restart: unless-stopped
+        depends_on:
+            - db
+    certbot:
+        container_name: certbot
+        image: certbot/certbot
+        restart: unless-stopped
+        volumes:
+            - ./data/certbot/conf:/etc/letsencrypt
+            - ./data/certbot/www:/var/www/certbot
+        environment:
+            - TZ=Asia/Seoul
+        entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
